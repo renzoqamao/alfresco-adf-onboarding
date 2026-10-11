@@ -42,7 +42,7 @@ otra opción.
 
 | Requisito | Versión | Por qué |
 |---|---|---|
-| Node.js | **16.20.2** | Angular 14 soporta oficialmente Node 14 y 16 |
+| Node.js | Compatibles: **14.15+ o 16.10+** (14.21.3, 16.20.2). Probado: **16.20.2** | Angular 14 soporta oficialmente `^14.15.0 \|\| ^16.10.0`; `yo@4.3.1` pide `>=12.10.0`. [detalle](02-matriz-de-versiones.md#5-versiones-de-node-compatibles-con-cada-prueba-realizada) |
 | npm | **8.19.4** | El que trae Node 16.20.2 |
 | yo | **4.3.1** | `yo@7` exige Node `^20.17 \|\| >=22.9` y no funciona con este generador |
 | generator-alfresco-adf-app | **6.1.1** | Última versión |

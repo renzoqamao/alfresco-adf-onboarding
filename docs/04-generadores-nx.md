@@ -31,7 +31,7 @@ versión de Angular.
 
 | Requisito | Versión | Notas |
 |---|---|---|
-| Node.js | **24.x**, 24.11.1 o superior (`.nvmrc` del repo = 24.11.1; probado con 24.19.0) | Angular 19 acepta `^18.19.1 \|\| ^20.11.1 \|\| >=22.0.0` y el blog de Hyland (sep. 2025) decía 22.x, pero `create-nx-workspace@latest` crea hoy un workspace **Nx 23**, que solo se probó con Node 24 |
+| Node.js | **24.11.1+** recomendado (`.nvmrc` del repo; probado con **24.19.0**). Compatibles con Angular 19: 18.19.1+, 20.11.1+, 22.x | Angular 19 acepta `^18.19.1 \|\| ^20.11.1 \|\| >=22.0.0` y el blog de Hyland (sep. 2025) decía 22.x, pero `create-nx-workspace@latest` crea hoy un workspace **Nx 23**, que solo se probó con Node 24 |
 | npm | **11.x** | El que trae Node 24 |
 | Nx | Global opcional (`npm i -g nx`). Si no, usar `npx nx`. | El workspace se creó con Nx 23.x; el template trae su propio Nx 21 |
 | Workspace Nx | Obligatorio | Los generadores Nx solo funcionan dentro de un workspace |

@@ -20,6 +20,26 @@ equivalentes (se indica cuando cambian).
 | VS Build Tools 2022 + Python | ✅ (Windows) | | | | [4](#4-visual-studio-build-tools--python-solo-yeoman-en-windows) |
 | Docker + ACS | ✅ | ✅ | ✅ | ✅ | [5](#5-backend-acs-con-docker) |
 
+## ¿Qué puedo hacer con cada versión de Node?
+
+Resultado de cruzar la tabla oficial de Angular, los `engines` y el `.nvmrc` de cada proyecto con las
+pruebas realizadas. Detalle por prueba en
+[02-matriz-de-versiones.md § 5](02-matriz-de-versiones.md#5-versiones-de-node-compatibles-con-cada-prueba-realizada).
+✅ = probado con esa versión de Node.
+
+| Node (última de la línea) | npm | Compatible con | Fuera de lo oficial, pero funciona |
+|---|---|---|---|
+| **14.21.3** | 6.14 | Yeoman (Angular 14) · ADF a mano Angular 14 | — |
+| **16.20.2** | 8.19.4 | ✅ Yeoman (Angular 14) · ✅ ADF a mano Angular 14 · ✅ ADF a mano Angular 16 · ACA 5.3.0 | — |
+| **18.20.8** | 10.8.2 | ✅ ACA 4.4.1 · ✅ ACA 5.3.0 · ADF a mano Angular 16 y 18 · Generadores Nx (Angular 19, sin probar con Nx 23) | ACA 4.4.1 con Angular 14 (lo pide su `.nvmrc`) |
+| **20.20.2** | 10.8.2 | ADF a mano Angular 18 y 20 · ACA 6.0 (Angular 17) · Angular 19/21 | — |
+| **22.23.3** | 10.9.9 | ADF a mano Angular 18, 20 y 22 (necesita 22.22.3+) · Generadores Nx (lo pedía el blog) · ACA 7.0–7.4 | — |
+| **24.21.0** (probado 24.19.0) | 11.x | ✅ Generadores Nx · ✅ ACA 8.0.0 · ✅ ACA `master` (24.13.1+) · ✅ ADF a mano Angular 20 y 22 (24.15+) · ✅ tutorial | ✅ ADF a mano Angular 18 (oficial: hasta Node 22) |
+| 26.11.1 | 11.20 | ADF a mano Angular 22 | No probado |
+
+**Para un aula** alcanza con instalar tres versiones: **24.x** (todo lo moderno), **18.20.8** (ACA 4/5)
+y **16.20.2** (Yeoman, Angular 14/16).
+
 ## 1. nvm: varias versiones de Node
 
 Cada versión de Angular, ACA o del generador necesita un Node distinto, así que conviene usar un

@@ -61,7 +61,7 @@ npm start                      # = nx serve content-ce → http://localhost:4200
 
 | Requisito | Versión |
 |---|---|
-| Node.js | **18.20.8** (`.nvmrc` = 18) |
+| Node.js | `.nvmrc` = 18. Compatibles: **18.20.8** (probado) y 16.20.2. Angular 14 soporta oficialmente solo 14/16, pero ACA 4.4.1 pide 18 y funciona. [detalle](02-matriz-de-versiones.md#5-versiones-de-node-compatibles-con-cada-prueba-realizada) |
 | npm | 10.8.2 |
 | Git | cualquiera |
 | ACS | 23.2 (compatible con el docker-compose actual para pruebas) |
@@ -93,7 +93,7 @@ npm start
 
 | Requisito | Versión |
 |---|---|
-| Node.js | **18.20.8** (`.nvmrc` = 18) |
+| Node.js | `.nvmrc` = 18. Compatibles (Angular 16): 16.14+ o 18.10+ → **18.20.8** (probado), 16.20.2. [detalle](02-matriz-de-versiones.md#5-versiones-de-node-compatibles-con-cada-prueba-realizada) |
 | npm | 10.8.2 |
 | ACS | 23.4 |
 
@@ -144,7 +144,7 @@ Opciones:
 
 | Requisito | Versión |
 |---|---|
-| Node.js | **24.13.1+** (`.nvmrc`); probado con 24.19.0 |
+| Node.js | **24.13.1+** (`.nvmrc`); probado con **24.19.0**. Angular 20 también admite 20.19+ y 22.12+, pero ACA pide 24 (no probado con 20/22). [detalle](02-matriz-de-versiones.md#5-versiones-de-node-compatibles-con-cada-prueba-realizada) |
 | npm | 11.x |
 | ACS | 26.x (el docker-compose Community actual) |
 
@@ -176,7 +176,7 @@ npm start
 
 | Requisito | Versión |
 |---|---|
-| Node.js | **≥ 24.13.1** (`engines`) |
+| Node.js | **≥ 24.13.1** (`engines`, obligatorio); probado con **24.19.0**. 20 y 22 no cumplen `engines` |
 | Gestor | **pnpm 11.17.0** (`packageManager`). `preinstall: npx only-allow pnpm` **bloquea npm** |
 
 ### Pasos

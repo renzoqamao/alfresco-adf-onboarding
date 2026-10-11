@@ -128,7 +128,7 @@ npx ng build         # build de producción → dist/
 
 | Requisito | Versión |
 |---|---|
-| Node.js | **16.20.2** (probado) |
+| Node.js | Compatibles: **14.15+ o 16.10+** (14.21.3, 16.20.2). Probado: **16.20.2**. [detalle](02-matriz-de-versiones.md#5-versiones-de-node-compatibles-con-cada-prueba-realizada) |
 | npm | 8.19.4 |
 | Angular CLI | 14.2.x (`ng new` instaló 14.3.0) |
 | TypeScript | 4.7 (el de Angular 14) |
@@ -223,7 +223,7 @@ Luego: `src/app.config.json` + registrarlo en assets ([C3](#c3-appconfigjson)), 
 
 | Requisito | Versión |
 |---|---|
-| Node.js | **16.20.2** (probado; Angular 16 también soporta 18.10+) |
+| Node.js | Compatibles: **16.14+ o 18.10+** (16.20.2, 18.20.8). Probado: **16.20.2**. [detalle](02-matriz-de-versiones.md#5-versiones-de-node-compatibles-con-cada-prueba-realizada) |
 | npm | 8.19.4 |
 | Angular CLI | 16.2.x (`ng new` instaló 16.2.12) |
 | ADF | `7.0.0-alpha.7` (pide `@angular/*` **16.2.9 exacto** → `legacy-peer-deps`) |
@@ -274,7 +274,7 @@ El `app.module.ts` es **idéntico al de Angular 14** (`CoreModule.forRoot()` + `
 
 | Requisito | Versión |
 |---|---|
-| Node.js | Oficial: `^18.19.1 \|\| ^20.11.1 \|\| >=22`. Probado con **24.19.0** |
+| Node.js | Oficial: `^18.19.1 \|\| ^20.11.1 \|\| ^22.0.0` (18.20.8, 20.20.2, 22.23.3). Probado con **24.19.0**: fuera del rango oficial, pero lo acepta `engines` (`>=22`) y funciona. [detalle](02-matriz-de-versiones.md#5-versiones-de-node-compatibles-con-cada-prueba-realizada) |
 | npm | 11.x (con Node 24) |
 | Angular CLI | 18.2.x (`ng new` instaló 18.2.14) |
 | ADF | `7.0.1` |
@@ -355,7 +355,7 @@ mismo patrón que usa el template Nx con ADF 8. Esta variante **no se probó** c
 
 | Requisito | Versión |
 |---|---|
-| Node.js | `^20.19 \|\| ^22.12 \|\| >=24`. Probado con **24.19.0** |
+| Node.js | Oficial: `^20.19.0 \|\| ^22.12.0 \|\| ^24.0.0` (20.20.2, 22.23.3, 24.21.0). Probado con **24.19.0**. [detalle](02-matriz-de-versiones.md#5-versiones-de-node-compatibles-con-cada-prueba-realizada) |
 | npm | 11.x |
 | Angular CLI | 20.3.x (`ng new` instaló 20.3.33) |
 | ADF | `9.0.0` (peers `@angular/* >= 20.3.25`) |
@@ -459,7 +459,7 @@ Componente: `imports: [LoginComponent]`, `template: '<adf-login></adf-login>'`.
 
 | Requisito | Versión |
 |---|---|
-| Node.js | `^22.22.3 \|\| ^24.15.0 \|\| >=26`. Probado con **24.19.0** |
+| Node.js | Oficial: `^22.22.3 \|\| ^24.15.0 \|\| ^26.0.0` (22.23.3, 24.21.0, 26.11.1; **no** 22.0–22.22.2 ni 24.0–24.14). Probado con **24.19.0**. [detalle](02-matriz-de-versiones.md#5-versiones-de-node-compatibles-con-cada-prueba-realizada) |
 | npm | 11.x |
 | Angular CLI | `latest` = 22.2.x |
 | ADF | `9.0.0` |
