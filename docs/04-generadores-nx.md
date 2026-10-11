@@ -31,7 +31,7 @@ versión de Angular.
 
 | Requisito | Versión | Notas |
 |---|---|---|
-| Node.js | **24.x** (`.nvmrc` del repo = 24.11.1; probado con 24.19.0) | El blog de Hyland (sep. 2025) decía 22.x; Angular 19 también funciona con 22 |
+| Node.js | **24.x**, 24.11.1 o superior (`.nvmrc` del repo = 24.11.1; probado con 24.19.0) | Angular 19 acepta `^18.19.1 \|\| ^20.11.1 \|\| >=22.0.0` y el blog de Hyland (sep. 2025) decía 22.x, pero `create-nx-workspace@latest` crea hoy un workspace **Nx 23**, que solo se probó con Node 24 |
 | npm | **11.x** | El que trae Node 24 |
 | Nx | Global opcional (`npm i -g nx`). Si no, usar `npx nx`. | El workspace se creó con Nx 23.x; el template trae su propio Nx 21 |
 | Workspace Nx | Obligatorio | Los generadores Nx solo funcionan dentro de un workspace |
@@ -155,7 +155,8 @@ providers: [
 2. Indican `npm i -D @angular-devkit/build-angular` antes de `npm install`. **No hace falta**: el
    template ya trae `@angular-devkit/build-angular@19.2.15`. Sin versión instalaría la última
    (Angular 22) y rompería las dependencias.
-3. El blog pide Node 22; el `.nvmrc` del repositorio pide 24.11.1. Ambos funcionan con Angular 19.
+3. El blog pide Node 22; el `.nvmrc` del repositorio pide 24.11.1. Angular 19 admite los dos, pero
+   solo se comprobó el flujo completo (workspace Nx 23 + template) con **Node 24.19.0 / npm 11.17.0**.
 
 ### Recetas oficiales (para seguir aprendiendo)
 
