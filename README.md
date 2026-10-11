@@ -25,10 +25,11 @@ caso.
 | 09 | [Conceptos clave](docs/09-conceptos-clave.md) | `app.config.json`, proxy, autenticación, i18n, temas, componentes, extensiones |
 | 10 | [Problemas conocidos](docs/10-problemas-conocidos.md) | Errores reales y su solución |
 | 11 | [Referencias](docs/11-referencias.md) | Repositorios, documentación oficial, blogs, npm |
+| 12 | [Presentación (texto)](docs/12-presentacion.md) | Contenido de `onboarding-adf.pptx` diapositiva por diapositiva: comandos completos y notas del orador |
 
 Recursos:
 
-- [`docs/onboarding-adf.pptx`](docs/onboarding-adf.pptx): presentación de 23 diapositivas, con notas del orador, sobre el ejemplo más actual de cada camino (Yeoman/Angular 14, Generador Nx/Angular 19, ACA 8.0.0/Angular 20 y master/21, ADF a mano/Angular 22).
+- [`docs/onboarding-adf.pptx`](docs/onboarding-adf.pptx): presentación de 24 diapositivas, con notas del orador (versión en texto: [`docs/12-presentacion.md`](docs/12-presentacion.md)), sobre el ejemplo más actual de cada camino (Yeoman/Angular 14, Generador Nx/Angular 19, ACA 8.0.0/Angular 20 y master/21, ADF a mano/Angular 22).
 - [`ejemplos/angular20-adf9-mini-app`](ejemplos/angular20-adf9-mini-app): app del tutorial, lista para `npm install && npm start`.
 - [`scripts/`](scripts): scripts que reproducen las pruebas (Angular + ADF por versión, ACA por tag).
 

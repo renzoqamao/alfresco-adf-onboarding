@@ -47,8 +47,16 @@ npm start                      # = nx serve content-ce → http://localhost:4200
 - `app/src/app.config.json` trae `ecmHost: "{protocol}//{hostname}{:port}"`: la app llama a su propio
   origen y el proxy hace el resto. Viene con `"authType": "BASIC"` y `"providers": "ECM"`.
 - Build de producción: `npx nx build content-ce` → `dist/content-ce`.
-- En la consola del navegador aparece **`error loading discovery document`**. Es normal: ACA intenta
-  leer la configuración OAuth de un Identity Service (Keycloak) que no existe. Con `BASIC` no afecta.
+- En la consola del navegador aparece **`error loading discovery document`** (y `OAuthErrorEvent`):
+  ACA intenta leer la configuración OAuth de un Identity Service (Keycloak) que no existe, por el
+  bloque `oauth2` de `app/src/app.config.json`. Con `authType: BASIC` se elimina borrando ese bloque
+  (comprobado en ACA 8.0.0: el error desaparece y el login sigue funcionando). Desde la raíz de ACA:
+
+  ```powershell
+  node -e "const f='app/src/app.config.json',fs=require('fs'),c=JSON.parse(fs.readFileSync(f));delete c.oauth2;fs.writeFileSync(f,JSON.stringify(c,null,2))"
+  ```
+
+  Si más adelante se usa OAuth (Keycloak), hay que volver a poner el bloque con los datos del servidor.
 - Si ACS no está levantado, el login responde **504**.
 
 ---
@@ -237,23 +245,23 @@ alfresco-content-app/
 
 ## Crear una extensión de ACA con Nx
 
-Con `@alfresco/aca-generators`, desde la raíz de un ACA ya instalado (no probado en este repositorio;
-pasos del README del generador y del blog de Hyland):
+Con `@alfresco/aca-generators`, desde la raíz de un ACA ya instalado.
+
+> **Comprobado en ACA 8.0.0** (Node 24.19.0): `nx add`, el generador, `npm install` y
+> `npx nx build content-ce` ("Successfully ran target build"). El ítem de menú se ve después de iniciar
+> sesión, con ACS levantado.
 
 ```powershell
 # ACA 8.0.0 (npm)
 npx nx add @alfresco/aca-generators
-npx nx g @alfresco/aca-generators:aca-extension
-#   ? What name would you like to use?                         → ext
-#   ? What should be the directory name for the new library?   → ext
+npx nx g @alfresco/aca-generators:aca-extension --name=ext --directory=ext
+#   sin --name/--directory pregunta: What name would you like to use? · What should be the directory name for the new library?
 npm install
 npm start
-
-# ACA master (pnpm)
-pnpm nx add @alfresco/aca-generators
-pnpm nx g @alfresco/aca-generators:aca-extension
-pnpm install ; pnpm start
 ```
+
+En ACA `master` serían los mismos comandos con `pnpm` (`pnpm nx add ...`, `pnpm nx g ...`,
+`pnpm install`, `pnpm start`). No se probó en `master`.
 
 Crea `projects/ext/` (componente, módulo, `assets/ext.json`, i18n) y actualiza
 `app/src/app/extensions.module.ts`, `app/project.json` y `tsconfig.json`. Al iniciar sesión aparece un

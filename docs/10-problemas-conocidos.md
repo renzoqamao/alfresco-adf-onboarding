@@ -47,7 +47,7 @@ que vienen de la documentación oficial.
 | `NullInjectorError: No provider for RedirectAuthService` | ADF 6/7 sin `AuthModule.forRoot()` | Importar `AuthModule.forRoot({ useHash: true })` |
 | Texto `visibility` en vez del ícono del ojo | Falta la fuente Material Icons | `ng add @angular/material` o el `<link>` en `index.html` |
 | Login falla, el proxy responde **504** | ACS no está en `BASE_URL` / `target` | Levantar ACS ([01 · 5](01-preparar-entorno.md#5-backend-acs-con-docker)) y comprobar el endpoint `-ready-` |
-| `error loading discovery document` / `OAuthErrorEvent` en ACA | ACA intenta leer la config OIDC de un Identity Service que no existe | Normal con `authType: BASIC`; con OAuth, revisar `oauth2.host` |
+| `error loading discovery document` / `OAuthErrorEvent` en ACA | ACA intenta leer la config OIDC de un Identity Service que no existe (bloque `oauth2` de `app/src/app.config.json`) | Con `authType: BASIC`: borrar el bloque `oauth2` (comando en [05-aca.md](05-aca.md#pasos-comunes)). Con OAuth: revisar `oauth2.host` |
 | Angular 21+: ADF no refresca la vista | Proyecto zoneless | `zone.js` en `polyfills` + `provideZoneChangeDetection()` |
 | CORS en producción | No hay proxy de Angular | Mismo dominio con un reverse proxy, o CORS en ACS (ver `docs/getting-started/cors.md` de ACA) |
 
