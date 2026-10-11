@@ -28,6 +28,7 @@ caso.
 
 Recursos:
 
+- [`docs/onboarding-adf.pptx`](docs/onboarding-adf.pptx): presentación de 23 diapositivas, con notas del orador, sobre el ejemplo más actual de cada camino (Yeoman/Angular 14, Generador Nx/Angular 19, ACA 8.0.0/Angular 20 y master/21, ADF a mano/Angular 22).
 - [`ejemplos/angular20-adf9-mini-app`](ejemplos/angular20-adf9-mini-app): app del tutorial, lista para `npm install && npm start`.
 - [`scripts/`](scripts): scripts que reproducen las pruebas (Angular + ADF por versión, ACA por tag).
 
