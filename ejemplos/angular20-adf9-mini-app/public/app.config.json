@@ -1,0 +1,7 @@
+{
+  "ecmHost": "http://localhost:4200",
+  "providers": "ECM",
+  "authType": "BASIC",
+  "loginRoute": "login",
+  "application": { "name": "ADF test" }
+}
